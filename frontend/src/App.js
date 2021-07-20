@@ -7,12 +7,11 @@ function App() {
     const [example,setExample] = useState(null);
 
     useEffect(()=> {
-        axios.get('http://HERC01:5000').then((res) => {
+        axios.get('/api/').then((res) => {
             console.log(res.data)
             setExample(res.data)
         }).catch(err => console.error(err))
     },[])
-
     return (
         <React.Fragment>
             <div className={'sticky-lg-top'}>

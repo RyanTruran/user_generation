@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
-app.use('/', exampleRouter)
+app.use('/api', exampleRouter)
 
 app.listen(5000, () => {
     console.log(`Example Server is running at http://localhost:5000`)
