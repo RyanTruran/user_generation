@@ -1,0 +1,12 @@
+version: '3'
+services:
+  api:
+    image: backend:latest
+    restart: always
+  nginx:
+    depends_on:
+      - api
+    image: frontend:latest
+    ports:
+      - 80:80
+    restart: always
