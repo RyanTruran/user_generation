@@ -1,24 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './App.css';
 import {Header} from "./Components/Header/header";
-import axios from "axios"
+import Display from "./Components/Display/Display";
 function App() {
 
-    const [example,setExample] = useState(null);
-
-    useEffect(()=> {
-        axios.get('/api/').then((res) => {
-            console.log(res.data)
-            setExample(res.data)
-        }).catch(err => console.error(err))
-    },[])
     return (
         <React.Fragment>
-            <div className={'sticky-lg-top'}>
-                <Header/>
-            </div>
-            <div className={'App'}>
-                {example}
+            <div className={'App-header'}>
+                <Display/>
             </div>
         </React.Fragment>
   );
